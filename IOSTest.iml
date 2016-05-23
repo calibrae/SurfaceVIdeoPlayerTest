@@ -11,9 +11,6 @@
             <entry library-id="a3c50531-e188-4e06-8d87-6b2af9e238e4">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-id="2049896f-27ef-41ad-9819-223dcd40963b">
-              <dependency linkage="Merged" />
-            </entry>
           </entries>
           <sdk name="air-sdk-22-beta" />
         </dependencies>
@@ -58,16 +55,6 @@
         <properties id="a3c50531-e188-4e06-8d87-6b2af9e238e4" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/videoPlayerSurface.ane!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="2049896f-27ef-41ad-9819-223dcd40963b" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/videoPlayerExtension.ane!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

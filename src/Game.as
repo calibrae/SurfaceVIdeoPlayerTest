@@ -41,45 +41,34 @@ package {
 			var copy : File = _handleFile();
 			_surfacePlayer.attachVideo(copy, SurfaceVideoLocation.ON_SD_CARD);
 
-//			_surfacePlayer.play();
-
-
 		}
-
-//
-//		public function runExtension() : void {
-//			_ext = new VideoPlayer();
-//
-//			var copy : File = _handleFile();
-////			_ext.play(copy.nativePath, VideoType.ON_SD_CARD);
-//			_ext.play("http://myflashlabs.com/showcase/Bully_Scholarship_Edition_Trailer.mp4", VideoType.ON_LINE);
-//
-//		}
-
 
 		private function _handleFile() : File {
 
 			var file : File = File.applicationDirectory.resolvePath("testVideoPlayerSurface.mp4");
-			var f : File;
-			for each (f  in File.applicationDirectory.getDirectoryListing()) {
-				trace("applicationDirectory");
-				trace(f.nativePath + " :: " + f.size + "\n");
-			}
+//			_listFiles(File.applicationDirectory.getDirectoryListing(), "Application Directory");
+
 			if (!file.exists) {
 				trace("File doesn't exist");
 				return null;
 			}
 			var copy : File = File.applicationStorageDirectory.resolvePath("testVideoPlayerSurface.mp4");
-			file.copyTo(copy, true);
-
-			for each (f  in File.applicationStorageDirectory.getDirectoryListing()) {
-				trace("applicationStorageDirectory");
-				trace(f.nativePath + " :: " + f.size + "\n");
+			if (!copy.exists) {
+				trace("copying file to storage directory");
+				file.copyTo(copy, true);
 			}
+//			_listFiles(File.applicationStorageDirectory.getDirectoryListing(), "Application Storage Directory");
 
 			trace("file exists");
 
 			return copy;
+		}
+
+		private function _listFiles(path : Array, name : String) {
+			trace(name);
+			for each (var file : File in path) {
+				trace(file.nativePath + " :: " + file.size + "\n");
+			}
 		}
 
 		private function onMediaStatusChanged(event : SurfacePlayerEvent) : void {
@@ -89,9 +78,6 @@ package {
 		private function onTargetVideoAvailability(event : SurfacePlayerEvent) : void {
 			trace("video availability");
 			_surfacePlayer.play();
-
-//			Starling.current.stage3D.visible = false;
-
 		}
 
 		private function onVideoPlaybackCompleted(event : SurfacePlayerEvent) : void {
@@ -104,7 +90,6 @@ package {
 
 		}
 
-//		private var _ext : VideoPlayer;
 		private var _surfacePlayer : SurfacePlayer;
 
 	}
