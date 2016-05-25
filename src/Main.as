@@ -33,11 +33,14 @@ package {
 			shape.graphics.endFill();
 			addChild(shape);
 
+			_runVideo = new RunVideo();
+			_runVideo.stage = stage;
+
 			trace("pre init ended");
 			trace ("framerate: "+stage.frameRate+" fps");
 		}
 
-		private var _runVideo : RunVideo = new RunVideo();
+		private var _runVideo : RunVideo;
 
 		private function _enterFrame(event : flash.events.Event) : void {
 
@@ -55,7 +58,7 @@ package {
 			DisplaySize = new Point(stage.stageWidth, stage.stageHeight);
 
 
-			_runVideo.stage = stage;
+
 			_runVideo.runSurface();
 
 			return;

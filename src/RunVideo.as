@@ -15,6 +15,15 @@ package {
 
 	public class RunVideo {
 
+		public function RunVideo() {
+			_surfacePlayer = new SurfacePlayer(_stage);
+			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_BACK_CLICKED, onBackClickedWhenSurfacePlayerIsAvailable);
+			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_COMPLETION_LISTENER, onVideoPlaybackCompleted);
+			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_FILE_AVAILABILITY, onTargetVideoAvailability);
+			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_MEDIA_STATUS_CHANGED, onMediaStatusChanged);
+
+		}
+
 
 		public function set stage(value : Stage) : void {
 			_stage = value;
@@ -24,11 +33,6 @@ package {
 
 			trace("runSurface");
 
-			_surfacePlayer = new SurfacePlayer(_stage);
-			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_BACK_CLICKED, onBackClickedWhenSurfacePlayerIsAvailable);
-			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_COMPLETION_LISTENER, onVideoPlaybackCompleted);
-			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_FILE_AVAILABILITY, onTargetVideoAvailability);
-			_surfacePlayer.addEventListener(SurfacePlayerEvent.ON_MEDIA_STATUS_CHANGED, onMediaStatusChanged);
 
 			_surfacePlayer.init(0, 0, 400, 200, false);
 
@@ -83,6 +87,7 @@ package {
 			trace("back clicked");
 
 		}
+
 		private var _stage : Stage;
 		private var _surfacePlayer : SurfacePlayer;
 	}
