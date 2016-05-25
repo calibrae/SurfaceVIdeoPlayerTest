@@ -6,6 +6,7 @@ package {
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.geom.Point;
+	import flash.system.System;
 
 
 	import starling.core.Starling;
@@ -31,18 +32,33 @@ package {
 			shape.graphics.drawRect(0,0,100,50);
 			shape.graphics.endFill();
 			addChild(shape);
+
+			trace("pre init ended");
+			trace ("framerate: "+stage.frameRate+" fps");
 		}
+
+		private var _runVideo : RunVideo = new RunVideo();
 
 		private function _enterFrame(event : flash.events.Event) : void {
 
-			if (_count < 3) {
+			if (_count < 240) {
+				if (_count % 10 == 0){
+					trace("count : "+_count);
+				}
 				_count++;
 				return;
 			}
+			trace("waited for 30 frames");
+
 			removeEventListener(flash.events.Event.ENTER_FRAME, _enterFrame);
 
 			DisplaySize = new Point(stage.stageWidth, stage.stageHeight);
 
+
+			_runVideo.stage = stage;
+			_runVideo.runSurface();
+
+			return;
 			_starling = new Starling(Game, stage);
 			_starling.addEventListener(starling.events.Event.ROOT_CREATED, _rootCreated);
 			_starling.start();

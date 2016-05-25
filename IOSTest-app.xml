@@ -112,7 +112,7 @@
     </initialWindow>
     <extensions>
         <extensionID>com.myflashlab.air.extensions.videoPlayerSurface</extensionID>
-        <extensionID>com.myflashlab.air.extensions.videoPlayer</extensionID>
+        <!--<extensionID>com.myflashlab.air.extensions.videoPlayer</extensionID>-->
         <!--<extensionID>com.freshplanet.AirVideo</extensionID>-->
     </extensions>
 
