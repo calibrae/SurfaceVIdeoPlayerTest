@@ -7,17 +7,14 @@
  */
 package {
 	import flash.display.Stage;
-	import flash.display.StageOrientation;
 
 	import starling.core.Starling;
-
 	import starling.display.Quad;
 	import starling.display.QuadBatch;
 	import starling.display.Sprite;
 	import starling.events.Touch;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
-	import starling.text.TextField;
 
 	public class Game extends Sprite {
 		public function Game() {
@@ -31,10 +28,6 @@ package {
 			var quad : Quad = new Quad(200, 200, 0xFF0000);
 
 			addChild(quad);
-//
-//			_text.x = quad.width;
-//			addChild(_text);
-
 
 			_batch = new QuadBatch();
 			addChild(_batch);
@@ -46,12 +39,7 @@ package {
 
 		}
 
-		private function _log(msg : String) : void {
-			_text.text += msg + "\r";
-		}
-
 		private function handleTouch(event : TouchEvent) : void {
-//			orient();
 			var touch : Touch = event.getTouch(this);
 			if (touch && (touch.phase == TouchPhase.ENDED || TouchPhase.MOVED)) {
 				_quad.color = Math.random() * 0xFFFFFF;
@@ -62,15 +50,8 @@ package {
 
 			}
 		}
-
-		private function orient() : void {
-			var stage : Stage = Starling.current.nativeStage;
-
-			stage.setOrientation(stage.orientation == StageOrientation.ROTATED_LEFT ? StageOrientation.ROTATED_RIGHT : StageOrientation.ROTATED_LEFT);
-		}
 		private var _batch : QuadBatch;
 		private var _quad : Quad;
-		private var _text : TextField = new TextField(300, 100, "");
 
 
 	}
