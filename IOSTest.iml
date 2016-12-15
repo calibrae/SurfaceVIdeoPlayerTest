@@ -5,9 +5,6 @@
       <configuration name="IOSTest" target-platform="Mobile" pure-as="true" main-class="Main" output-file="Main.swf" output-folder="$MODULE_DIR$/../out/production/IOSTest">
         <dependencies target-player="19.0">
           <entries>
-            <entry library-id="3b7ca80d-35bd-431f-ae7b-5c66c4ef29c7">
-              <dependency linkage="Merged" />
-            </entry>
             <entry library-id="b9ed5098-7a03-4549-b852-e07b97eb2bc7">
               <dependency linkage="Merged" />
             </entry>
@@ -28,10 +25,7 @@
         </packaging-android>
         <packaging-ios enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/IOSTest-app.xml" package-file-name="IOSTest">
           <files-to-package>
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/video" path-in-package="." />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/landscape" path-in-package="." />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/icons" path-in-package="icons" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/portrait" path-in-package="." />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
           </files-to-package>
           <AirSigningOptions sdk="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk" keystore-path="$MODULE_DIR$/cert/dev.p12" provisioning-profile-path="$MODULE_DIR$/cert/VideoTestDebug.mobileprovision" />
         </packaging-ios>
@@ -46,16 +40,6 @@
     </content>
     <orderEntry type="jdk" jdkName="air-sdk-24" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="3b7ca80d-35bd-431f-ae7b-5c66c4ef29c7" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/uanalytics.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module-library" exported="">
       <library type="flex">
         <properties id="b9ed5098-7a03-4549-b852-e07b97eb2bc7" />

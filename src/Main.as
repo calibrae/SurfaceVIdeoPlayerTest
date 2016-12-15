@@ -3,6 +3,7 @@ package {
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.geom.Point;
 
 	import starling.core.Starling;
@@ -20,10 +21,9 @@ package {
 				stage.color = 0x0;
 				stage.addEventListener(flash.events.Event.RESIZE, handleStageResize);
 				stage.addEventListener(flash.events.Event.ENTER_FRAME, _traceStageSize);
+				stage.addEventListener(MouseEvent.CLICK, _clickTest);
 			}
 		}
-
-		// waiting for the stage to get a correct size
 
 		private function _initStarling() : void {
 			DisplaySize = new Point(stage.stageWidth, stage.stageHeight);
@@ -32,6 +32,12 @@ package {
 			_starling = new Starling(Game, stage);
 			_starling.addEventListener(starling.events.Event.ROOT_CREATED, _rootCreated);
 			_starling.start();
+		}
+
+		// waiting for the stage to get a correct size
+
+		private function _clickTest(event : MouseEvent) : void {
+			trace("stage click");
 		}
 
 		private function _traceStageSize(event : flash.events.Event) : void {
