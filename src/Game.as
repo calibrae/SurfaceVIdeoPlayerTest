@@ -6,8 +6,6 @@
  * Time: 11:55
  */
 package {
-	import flash.display.Stage;
-
 	import starling.core.Starling;
 	import starling.display.Quad;
 	import starling.display.QuadBatch;
@@ -20,7 +18,7 @@ package {
 		public function Game() {
 		}
 
-		public function run(stage : Stage) : void {
+		public function run() : void {
 
 			var bg : Quad = new Quad(Starling.current.viewPort.width, Starling.current.viewPort.height, 0x00FF00);
 			addChild(bg);
@@ -50,6 +48,7 @@ package {
 
 			}
 		}
+
 		private var _batch : QuadBatch;
 		private var _quad : Quad;
 
