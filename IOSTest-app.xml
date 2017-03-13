@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<application xmlns="http://ns.adobe.com/air/application/24.0">
+<application xmlns="http://ns.adobe.com/air/application/25.0">
     <id>net.calii.test.VideoTest</id>
     <filename>RotationTest</filename>
     <name>VideoTest</name>
-    <versionNumber>0.0.5</versionNumber>
+    <versionNumber>0.0.12</versionNumber>
     <initialWindow>
         <content>SWF file name is set automatically at compile time</content>
         <visible>true</visible>
         <aspectRatio>landscape</aspectRatio>
         <autoOrients>true</autoOrients>
-        <fullScreen>true</fullScreen>
+        <fullScreen>false</fullScreen>
         <renderMode>direct</renderMode>
-        <depthAndStencil>false</depthAndStencil>
+        <depthAndStencil>true</depthAndStencil>
         <softKeyboardBehavior>none</softKeyboardBehavior>
     </initialWindow>
     <icon>

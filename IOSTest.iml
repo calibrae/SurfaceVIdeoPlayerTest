@@ -9,13 +9,12 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="air-sdk-24" />
+          <sdk name="air-sdk-22" />
         </dependencies>
         <compiler-options>
           <map>
-            <entry key="compiler.debug.swf" value="true" />
+            <entry key="compiler.debug.swf" value="false" />
           </map>
-          <option name="additionalOptions" value="-advanced-telemetry=true -swf-version=34" />
         </compiler-options>
         <packaging-air-desktop />
         <packaging-android use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/IOSTest-app.xml" package-file-name="Main">
@@ -27,7 +26,7 @@
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
           </files-to-package>
-          <AirSigningOptions sdk="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk" keystore-path="$MODULE_DIR$/cert/dev.p12" provisioning-profile-path="$MODULE_DIR$/cert/VideoTestDebug.mobileprovision" />
+          <AirSigningOptions sdk="$MODULE_DIR$/../../../../SDKS/iPhoneOS.9.2.sdk" keystore-path="$MODULE_DIR$/cert/Testflight.p12" provisioning-profile-path="$MODULE_DIR$/cert/VideoTestDistrib.mobileprovision" />
         </packaging-ios>
       </configuration>
     </configurations>
@@ -38,7 +37,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="air-sdk-24" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="air-sdk-22" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
